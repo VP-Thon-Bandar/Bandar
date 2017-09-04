@@ -29,5 +29,9 @@ namespace Bandar.Domain
         public IDbSet<Genre> Genres { get; set; }
 
         public IDbSet<Place> Places { get; set; }
+
+        public IDbSet<Event> Events { get; set; }
+
+        public IDbSet<Rating> Ratings { get; set; }
     }
 }
