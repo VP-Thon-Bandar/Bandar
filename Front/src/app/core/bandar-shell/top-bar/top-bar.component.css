@@ -1,0 +1,17 @@
+nav div a{
+    margin-left: 16px
+}
+
+.nav-wrapper{
+    background: #0055b8
+}
+
+.side-nav li > a > i {
+    margin-right: 16px
+}
+
+#bandar_icon{
+    width: 20px; 
+    height: 20px;
+    margin-inline-end: 16px;
+}
