@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 
 import { Band } from './band';
 
-const URL_MYBAND: string = "http://192.168.29.24/api/band/0200e7cb-af8e-48b7-a4b9-0012b0fc5aa0"
+const URL_MYBAND: string = "http://192.168.29.24/api/user"
 
 @Injectable()
 export class MyBandService {
@@ -14,7 +14,11 @@ export class MyBandService {
     console.log("INIT MYBAND SERVIRCE");
   }
 
-  
+  getBand(id: string): Observable<any>  {
+    console.log("HACIENDO REQUEST");
+    return this.http.get(URL_MYBAND + "/" + id).map((response) => response.json())
+  }
+
   agregar(body: Object) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -34,10 +38,5 @@ export class MyBandService {
     headers.append('Content-Type', 'application/json');
     console.log("PUT REQUEST");
     return this.http.put(URL_MYBAND + "/" + body._id, body, {headers: headers});
-  }
-
-  getMyBand(): Observable<Band>  {
-    console.log("HACIENDO REQUEST");
-    return this.http.get(URL_MYBAND).map((response) => response.json())
   }
 }

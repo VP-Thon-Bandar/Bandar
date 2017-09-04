@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-/*EL OBJETIVO DE USAR 'loadChildren' Y NO DIRECTAMENTE EL COMPONENTE ES QUE DE LA 1ER FORMA SE CARGA DINAMICAMENTE CUANDO SE NECESITA*/
-/*AMBOS SON MODULOS FUNCIONALES QUE SE CARGAN POR LAZY LOADING*/
 const routes: Routes = [
   {
     path: '',
@@ -16,6 +14,10 @@ const routes: Routes = [
   {
     path: 'myband',
     loadChildren: './../my-band/my-band.module#MyBandModule'
+  },
+  {
+    path: 'timeline',
+    loadChildren: './../timeline/timeline.module#TimelineModule'
   }
 ]
 

@@ -22,15 +22,16 @@ export class MyBandComponent implements OnInit {
   constructor(myBandService: MyBandService) {
     console.log('pase por aca');
 
-    this.band = new Band('La renga', 'Trueno tierra', 'Rock - Hard rock')
-    this.bandToEdit = new Band('La renga', 'Trueno tierra', 'Rock - Hard rock')
+    let id = "bailaguacha";
 
-    this.band = myBandService.getMyBand().subscribe(response => {
-        console.log(response)
-      },
-      error => {
-          console.log(error.text());
-      });
+    myBandService.getBand(id).subscribe((resp: any) => {
+      console.log(resp.Band)
+      this.band = new Band(resp.Band.Name, resp.Band.Description, resp.Band.Genre.Name, resp.Band.Image)
+      this.bandToEdit = new Band(resp.Band.Name,  resp.Band.Description, resp.Band.Genre.Name, resp.Band.Image)
+    },
+    error => {
+        console.log(error.text());
+    });
   }
 
   ngOnInit() {

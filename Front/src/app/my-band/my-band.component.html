@@ -1,7 +1,7 @@
 <div class="col s12 m7">
   <div class="card horizontal" *ngIf="this.band != null">
     <div class="card-image">
-      <img src="http://2.bp.blogspot.com/_QZlzrqta0vA/Sn4vQDodR1I/AAAAAAAAABk/2jz_NE1RA1s/S660/la_renga.png">
+      <img src={{band.image}}>
     </div>
     <div class="card-stacked">
       <div class="card-content">
@@ -22,7 +22,7 @@
 </div>
 
 <!-- Modal Structure -->
-<div id="modal-edit" class="modal modal-fixed-footer">
+<div id="modal-edit" class="modal modal-fixed-footer" *ngIf="bandToEdit != null">
   <div class="modal-content">
     <h4><i>Edit band</i></h4>
 
