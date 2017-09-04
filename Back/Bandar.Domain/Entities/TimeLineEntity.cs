@@ -9,7 +9,7 @@ namespace Bandar.Domain.Entities
         public string ModifiedBy { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime ModifiedDate { get; set; }
-        public abstract string Content { get; }
+        public abstract string EventTitle { get; }
         public abstract DateTime EventDate { get; }
     }
 }

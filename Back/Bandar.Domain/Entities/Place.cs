@@ -11,7 +11,9 @@ namespace Bandar.Domain.Entities
 
         public IList<Genre> Genres { get; set; }
 
-        public override string Content => $"Place {this.Name} Created At {this.CreatedDate}";
+        public override string EventTitle => $"Place {this.Name} Created At {this.CreatedDate}";
         public override DateTime EventDate => ModifiedDate;
+
+        public IList<Event> Events { get; set; }
     }
 }
