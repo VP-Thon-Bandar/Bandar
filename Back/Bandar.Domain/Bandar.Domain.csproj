@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="BandarContext.cs" />
     <Compile Include="Entities\Band.cs" />
+    <Compile Include="Entities\Event.cs" />
     <Compile Include="Entities\Genre.cs" />
     <Compile Include="Entities\Place.cs" />
     <Compile Include="Entities\TimeLineEntity.cs" />

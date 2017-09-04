@@ -10,5 +10,6 @@ namespace Bandar.Domain.Entities
         public DateTime CreatedDate { get; set; }
         public DateTime ModifiedDate { get; set; }
         public abstract string Content { get; }
+        public abstract DateTime EventDate { get; }
     }
 }
