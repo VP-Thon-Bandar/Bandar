@@ -141,22 +141,63 @@ namespace Bandar.Api.Controllers
 
             var theCavern = Repository.GetAll<Place>().First(x => x.Name == "The Cavern of Rock");
             var theBlah = Repository.GetAll<Band>().First(x => x.Name == "The BlahBlah Band");
+
+            var rating1 = new Rating
+            {
+                Id = Guid.NewGuid(),
+                Points = 1,
+                Feedback = "Nunca mas toco ahi!!!"
+            };
+
+            Repository.Create(rating1);
+
+            var bandRating1 = new Rating
+            {
+                Id = Guid.NewGuid(),
+                Points = 3,
+                Feedback = "Estaban todos borrachos!"
+            };
+
+            Repository.Create(bandRating1);
+
             var theBlahAtTheCavern = new Event
             {
                 Id = Guid.NewGuid(),
                 Place = theCavern,
                 Band = theBlah,
-                Date = DateTime.Now.AddDays(12)
+                Date = DateTime.Now.AddDays(12),
+                PlaceRating = rating1,
+                BandRating = bandRating1
             };
 
             Repository.Create(theBlahAtTheCavern);
+
+            var rating = new Rating
+            {
+                Id = Guid.NewGuid(),
+                Points = 3,
+                Feedback = "El lugar esta masomeno. La gente re amarga"
+            };
+
+            Repository.Create(rating);
+
+            var bandRating = new Rating
+            {
+                Id = Guid.NewGuid(),
+                Points = 5,
+                Feedback = "Genial la banda. Viva peron!"
+            };
+
+            Repository.Create(bandRating);
 
             var bailaAtTheCavern = new Event
             {
                 Id = Guid.NewGuid(),
                 Place = theCavern,
                 Band = bailaGuacha,
-                Date = DateTime.Now.AddDays(43)
+                Date = DateTime.Now.AddDays(43),
+                BandRating = bandRating,
+                PlaceRating = rating
             };
 
             Repository.Create(bailaAtTheCavern);
