@@ -1,20 +1,27 @@
 <div class="col s12 m7">
   <div class="card horizontal" *ngIf="this.band != null">
     <div class="card-image">
-      <img src={{band.image}}>
+      <img src={{band.image}} style="wight: 100px; height: 280px">
     </div>
     <div class="card-stacked">
       <div class="card-content">
-        <p>{{band.name}}</p>
-        <p>{{band.description}}</p>
-        <p>{{band.genre}}</p>
+        <p><strong>{{band.name}}</strong></p>
+        <br>
+        <p><i>{{band.description}}</i></p>
+        <br>
+        <div class="chip">
+            Cumbia
+          </div>
+        <div class="chip">
+            Colombia Vieja
+        </div>
+        <div class="chip">
+            {{band.genre}}
+        </div>
       </div>
       <div class="card-action">
           <a class="btn-floating btn-large green" data-target="modal-edit" (click)="edit()">
             <i class="fa fa-pencil" aria-hidden="true" ></i>
-          </a>
-          <a class="btn-floating btn-large red" data-target="modal-delete" (click)="delete()">
-            <i class="fa fa-trash" aria-hidden="true"></i>
           </a>
       </div>
     </div>
@@ -50,17 +57,4 @@
     <a class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
   </div>
 
-</div>
-
-<!-- Modal Structure -->
-<div id="modal-delete" class="modal modal-fixed-footer">
-  <div class="modal-content">
-    <h4>Delete band</h4>
-    <p>You are deleting your band, this step is irreversible, </p>
-    <p>Do you want continue? </p>
-  </div>
-  <div class="modal-footer">
-    <a class="modal-action modal-close waves-effect waves-green btn-flat" (click)="confirmDelete()">Delete</a>
-    <a class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
-  </div>
 </div>

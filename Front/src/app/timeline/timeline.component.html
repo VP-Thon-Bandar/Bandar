@@ -1,7 +1,10 @@
-esta template cargo
-
-<div *ngFor="let timelineEvent of timelineEvents">
-        {{timelineEvent.type}}
-        {{timelineEvent.description}}
-        {{timelineEvent.date}}
-</div>
+<ul class="collapsible" data-collapsible="accordion" *ngFor="let timelineEvent of timelineEvents">
+        <li>
+                <div class="collapsible-header">
+                        <i class="fa fa-globe" aria-hidden="true"></i>
+                        <strong> {{getLabelFromType(timelineEvent.type)}}  {{timelineEvent.date}} </strong> 
+                        <li><div class="divider"></div></li>
+                        {{timelineEvent.description}}
+                </div>
+        </li>
+</ul>
