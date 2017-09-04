@@ -1,19 +1,66 @@
-<div class="card horizontal">
-  <div class="row">
-    <div class="col s12">
-      <p> 
-        <strong>Name:</strong> {{band.name}}
-      </p>
-      <div class="divider"></div>
-
-      <p> 
-        <strong>Description:</strong> {{band.description}}
-      </p>
-      <div class="divider"></div>
-
-      <p> 
-        <strong>Genre:</strong> {{band.genre}}
-      </p>
+<div class="col s12 m7">
+  <div class="card horizontal" *ngIf="this.band != null">
+    <div class="card-image">
+      <img src="http://2.bp.blogspot.com/_QZlzrqta0vA/Sn4vQDodR1I/AAAAAAAAABk/2jz_NE1RA1s/S660/la_renga.png">
     </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p>{{band.name}}</p>
+        <p>{{band.description}}</p>
+        <p>{{band.genre}}</p>
+      </div>
+      <div class="card-action">
+          <a class="btn-floating btn-large green" data-target="modal-edit" (click)="edit()">
+            <i class="fa fa-pencil" aria-hidden="true" ></i>
+          </a>
+          <a class="btn-floating btn-large red" data-target="modal-delete" (click)="delete()">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal-edit" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4><i>Edit band</i></h4>
+
+    <br>
+
+    <div class="input-field col s12">
+      <strong>Name</strong>
+      <input id="icon_prefix" type="text" class="validate" [(ngModel)]="bandToEdit.name" #name>
+    </div>
+
+    <div class="input-field col s12">
+        <strong>Description</strong>
+      <input id="icon_prefix" type="text" class="validate" [(ngModel)]="bandToEdit.description" #desc>
+    </div>
+
+    <div class="input-field col s12">
+        <strong>Genre</strong>
+      <input id="icon_prefix" type="text" class="validate" [(ngModel)]="bandToEdit.genre" #genre>
+    </div>
+
+  </div>
+
+  <div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-green btn-flat" (click)="confirmEdit()">Save</a>
+    <a class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+  </div>
+
+</div>
+
+<!-- Modal Structure -->
+<div id="modal-delete" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4>Delete band</h4>
+    <p>You are deleting your band, this step is irreversible, </p>
+    <p>Do you want continue? </p>
+  </div>
+  <div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-green btn-flat" (click)="confirmDelete()">Delete</a>
+    <a class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
   </div>
 </div>

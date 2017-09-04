@@ -3,6 +3,7 @@ import { SharedModule } from './../shared/shared.module';
 import { Routes, RouterModule } from '@angular/router';
 
 import { MyBandComponent } from './my-band.component';
+import { MyBandService } from './shared/my-band.service';
 
 const routes: Routes = [
   {
@@ -21,6 +22,9 @@ const routes: Routes = [
   ],
   exports: [
     MyBandComponent
+  ],
+  providers: [
+    MyBandService
   ]
 })
 export class MyBandModule { }

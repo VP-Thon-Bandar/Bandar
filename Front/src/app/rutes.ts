@@ -1,0 +1,1 @@
+const URL_MYBAND: string = "http://192.168.29.24/api/band/0200e7cb-af8e-48b7-a4b9-0012b0fc5aa0"
