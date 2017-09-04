@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Band } from "app/bands/shared/band";
+import { Band } from "app/my-band/shared/band";
 
 @Component({
-  selector: 'bands',
-  templateUrl: './bands.component.html',
-  styleUrls: ['./bands.component.css']
+  selector: 'my-band',
+  templateUrl: './my-band.component.html',
+  styleUrls: ['./my-band.component.css']
 })
-export class BandsComponent implements OnInit {
+export class MyBandComponent implements OnInit {
 
   bands: Band[] = []
 

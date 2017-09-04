@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
 
       let delayMillis: number = 2000;
       setTimeout(() => {
-        this.router.navigate(['mybands']);
+        this.router.navigate(['myband']);
       }, delayMillis);
     }
   }
