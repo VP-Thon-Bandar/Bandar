@@ -14,8 +14,8 @@ const routes: Routes = [
     loadChildren: './../login/login.module#LoginModule'
   },
   {
-    path: 'mybands',
-    loadChildren: './../bands/bands.module#BandsModule'
+    path: 'myband',
+    loadChildren: './../my-band/my-band.module#MyBandModule'
   }
 ]
 
